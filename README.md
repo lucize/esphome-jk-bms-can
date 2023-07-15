@@ -119,9 +119,13 @@ The following are confirmed and known to work:
 ## Requirements
 
 * [ESPHome 2022.11.0 or higher](https://github.com/esphome/esphome/releases).
+<<<<<<< HEAD
 * Generic ESP32, I use the esp32doit-devkit-v1   NOTE: ESP32-S2 currently has issues with CAN BUS and does not work!
 * TJA1050 CAN controller interface module and 4.7K resistor for 5v to 3.3v level shifing.
 * Optional: JK RS485 Adaptor and RS484 to TTL3.3v Adaptor (see optional schematic below)
+=======
+* Generic ESP32 or ESP8266 board
+>>>>>>> eed5cf56095310755f7f0c185c3ecf4a3cd3718e
 
 ## Schematics
 I have designed and build a [Hardware interface baord](https://github.com/Uksa007/esphome-jk-bms-can/discussions/16) pictured below on the left.
@@ -316,7 +320,6 @@ In Home Assistant under settings->Intergration "Add Intergration" select ESPHome
 * ESP32: Adding all supported sensors can lead to a stack overflow / boot loop. This can be solved by increasing the stack size. ([#63][i63])
 * BLE: Please stick to the `esp-idf` framework because the Arduino framework crashs on the first received BLE notification.
 * Raspberry Pi & ESP-IDF: If the project doesn't compile because of `Error: Could not find the package with 'platformio/toolchain-esp32ulp @ ~1.22851.0' requirements for your system 'linux_aarch64'` please use a host with another processor architecture (f.e. x86). The toolchain isn't `linux_aarch64` (ARM64) compatible at the moment.
-* MQTT & BLE: Please use ESPHome `>=2022.4.0` if you want to use the BLE component (requires `esp-idf`) and MQTT. The MQTT component wasn't ESP-IDF compatible until then.
 
 [i9]: https://github.com/syssi/esphome-jk-bms/issues/9
 [i63]: https://github.com/syssi/esphome-jk-bms/issues/63
